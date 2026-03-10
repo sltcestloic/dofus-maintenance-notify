@@ -3,7 +3,8 @@ services:
   checker-daemon:
      build: .
      command: >
-      sh -c "npx prisma db push &&
+      sh -c "npx prisma generate &&
+             npx prisma db push &&
              npm start"
      volumes:
        - .:/usr/app
