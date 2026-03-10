@@ -1,0 +1,34 @@
+{
+  "name": "dofus-status-checker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sltcestloic/dofus-status-checker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sltcestloic/dofus-status-checker/issues"
+  },
+  "homepage": "https://github.com/sltcestloic/dofus-status-checker#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "prisma": "^7.4.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.4.2",
+    "@prisma/client": "^7.4.2",
+    "dotenv": "^17.3.1",
+    "pg": "^8.20.0",
+    "reflect-metadata": "^0.2.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsyringe": "^4.10.0"
+  }
+}

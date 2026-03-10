@@ -1,0 +1,20 @@
+version: '3'
+services:
+  checker-daemon:
+     build: .
+     command: >
+      sh -c "npx prisma db push &&
+             npm start"
+     volumes:
+       - .:/usr/app
+       - /usr/app/node_modules
+     restart: always
+     depends_on:
+       - postgres
+  postgres:
+    image: postgres:18
+    env_file:
+      - .env
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    restart: always
