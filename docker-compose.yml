@@ -10,12 +10,10 @@ services:
        - .:/usr/app
        - /usr/app/node_modules
      restart: always
-     depends_on:
+     networks:
+       - default
        - postgres
+
+networks:
   postgres:
-    image: postgres:18
-    env_file:
-      - .env
-    volumes:
-      - ./postgres-data:/var/lib/postgresql
-    restart: always
+    external: true
