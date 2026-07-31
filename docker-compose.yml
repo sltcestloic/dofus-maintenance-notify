@@ -3,12 +3,13 @@ services:
   checker-daemon:
      build: .
      command: >
-      sh -c "npx prisma generate &&
-             npx prisma db push &&
+      sh -c "npx prisma db push &&
              npm start"
-     volumes:
-       - .:/usr/app
-       - /usr/app/node_modules
+     env_file:
+       - .env
+     user: node
+     security_opt:
+       - no-new-privileges:true
      restart: always
      networks:
        - default
